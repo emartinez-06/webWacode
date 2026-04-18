@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.88), transparent 40%),
+    radial-gradient(circle at 80% 0%, rgba(173, 216, 230, 0.48), transparent 38%),
+    linear-gradient(145deg, #f3f7ff 0%, #e8eefb 50%, #dee9fb 100%);
+  color: #0f172a;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background:
+      radial-gradient(circle at 10% 20%, rgba(86, 96, 131, 0.36), transparent 40%),
+      radial-gradient(circle at 85% 0%, rgba(92, 53, 135, 0.3), transparent 35%),
+      linear-gradient(160deg, #080b16 0%, #101428 50%, #141a35 100%);
+    color: #f8fafc;
+  }
+}
+
+@layer components {
+  .glass-surface {
+    @apply border border-white/40 bg-white/60 shadow-[0_16px_58px_rgba(15,23,42,0.16)] backdrop-blur-2xl dark:border-white/20 dark:bg-black/40 dark:shadow-[0_20px_64px_rgba(2,6,23,0.45)];
+  }
+
+  .glass-float {
+    @apply transition-transform duration-300 ease-in-out hover:-translate-y-1;
+  }
+
+  .glass-button {
+    @apply shadow-[0_8px_24px_rgba(15,23,42,0.14)] backdrop-blur-xl transition-transform duration-300 ease-in-out hover:-translate-y-0.5 active:scale-[0.97];
+  }
+}
